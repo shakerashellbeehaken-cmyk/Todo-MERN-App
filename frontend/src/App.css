@@ -1,0 +1,436 @@
+html,
+body,
+#root {
+  height: 100%;
+  width: 100%;
+}
+* {
+  box-sizing: border-box;
+  font-family: "Segoe UI", Arial, sans-serif;
+}
+
+body {
+  margin: 0;
+  background-color: #f2f5f9;
+  color: #222;
+}
+
+
+   /* APP HEADER */
+
+.app-header {
+  background-color: #0b86bf;
+  color: white;
+  padding: 14px 16px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.app-title {
+  font-size: 20px;
+  font-weight: bold;
+}
+
+.logout-btn {
+  background-color: white;
+  color: #0b86bf;
+  border: none;
+  padding: 6px 14px;
+  border-radius: 6px;
+  font-size: 14px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.logout-btn:hover {
+  background-color: #e3f2fd;
+}
+
+ /* app container  */
+.app-container {
+  max-width: 760px;
+  margin: 0 auto;
+  padding: 20px;
+  height: calc(100vh - 60px);
+  display: flex;
+  flex-direction: column;
+}
+.todo-content {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.todo-list {
+  flex: 1;
+  overflow-y: auto;
+}
+
+/* card layout */
+.card {
+  background-color: white;
+  border-radius: 10px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
+  padding: 16px;
+  margin-bottom: 20px;
+}
+
+.card-header {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 16px;
+}
+
+.card-icon {
+  width: 44px;
+  height: 44px;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 20px;
+  color: white;
+}
+
+.blue {
+  background-color: #0b86bf;
+}
+
+.orange {
+  background-color: #e0bc0474;
+}
+
+.green {
+  background-color: #66bb6a;
+}
+
+.card-title {
+  font-size: 16px;
+  font-weight: bold;
+  color: #555;
+}
+
+/* todo input  */
+
+.add-input-row {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.add-input-row input {
+  flex: 1;
+  font-size: 18px;
+  padding: 16px 14px;
+  border: none;
+  border-bottom: 2px solid #ccc;
+  outline: none;
+  background-color: transparent;
+  color: #222;
+}
+
+.add-input-row input::placeholder {
+  color: #999;
+}
+
+.add-input-row input:focus {
+  border-bottom-color: #0b86bf;
+}
+
+/* add do button  */
+
+.add-button {
+  width: 38px;
+  height: 38px;
+  border-radius: 50%;
+  border: none;
+  background-color: #0b86bf;
+  color: white;
+  font-size: 22px;
+  font-weight: bold;
+  line-height: 0;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.add-button:hover {
+  background-color: #0b86bf;
+}
+
+/* todo list it */
+
+.todo-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 0;
+  border-bottom: 1px solid #eee;
+}
+
+.todo-item:last-child {
+  border-bottom: none;
+}
+
+.todo-left {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.check-circle {
+  width: 26px;
+  height: 26px;
+  border-radius: 50%;
+  background-color: #0b86bf;
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 14px;
+}
+
+/* mark completed */
+.check-circle {
+  cursor: pointer;
+  transition: background-color 0.2s, transform 0.1s;
+}
+
+.check-circle.done {
+  background-color: #66bb6a;
+}
+
+.check-circle:hover {
+  transform: scale(1.05);
+}
+
+.todo-text.completed {
+  text-decoration: line-through;
+  color: #9ca3af;
+}
+
+/* Disable edit button visually */
+.todo-actions button:disabled {
+  opacity: 0.4;
+  cursor: not-allowed;
+}
+
+.todo-text {
+  font-size: 16px;
+  color: #222;
+}
+
+/* action butt */
+
+.todo-actions button {
+  background: none;
+  border: none;
+  font-size: 18px;
+  margin-left: 8px;
+  cursor: pointer;
+}
+
+.todo-actions .edit {
+  color: #66bb6a;
+}
+
+.todo-actions .delete {
+  color: #ef5350;
+}
+
+/* edit  */
+.add-input-row input {
+  transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+.add-input-row input:focus {
+  box-shadow: 0 2px 0 rgba(11, 134, 191, 0.4);
+}
+/* auth pages */
+.auth-container {
+  width: 100%;
+  max-width: 380px;
+  background-color: white;
+  padding: 32px 28px;
+  border-radius: 12px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+  /* showing in cntr */
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.auth-container h2 {
+  text-align: center;
+  margin-bottom: 8px;
+  font-size: 26px;
+  color: #1f2937;
+}
+
+.auth-container p {
+  text-align: center;
+  font-size: 14px;
+  color: #4b5563;
+  margin-bottom: 20px;
+}
+
+.auth-container input {
+  width: 100%;
+  padding: 12px;
+  margin-bottom: 14px;
+  border: 1px solid #111;
+  border-radius: 6px;
+  font-size: 15px;
+  color: #ffff;
+  
+  /* color: #111827; */
+}
+
+.auth-container input::placeholder {
+  color: #9ca3af;
+}
+
+.auth-container button {
+  width: 100%;
+  padding: 12px;
+  background-color: #1695d0;
+  color: white;
+  font-size: 16px;
+  font-weight: bold;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+.auth-container button:hover {
+  background-color: #0279b0;
+}
+
+.auth-container .link {
+  margin-top: 15px;
+  text-align: center;
+  color: #0c708f;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+
+/* making resxponsive */
+@media (max-height: 600px) {
+  .auth-container {
+    position: relative;
+    transform: none;
+    top: auto;
+    left: auto;
+    margin: 40px auto;
+  }
+}
+
+@media (max-width: 480px) {
+  .auth-container {
+    margin: 60px 16px;
+    padding: 26px 20px;
+  }
+}
+/* mobile */
+@media (max-width: 480px) {
+  .app-header {
+    padding: 12px;
+  }
+
+  .app-title {
+    font-size: 18px;
+  }
+
+  .logout-btn {
+    padding: 6px 10px;
+    font-size: 13px;
+  }
+
+  .app-container {
+    max-width: 100%;
+    padding: 12px;
+    margin: 10px auto;
+  }
+
+  .card {
+    padding: 14px;
+    border-radius: 8px;
+  }
+
+  .card-icon {
+    width: 36px;
+    height: 36px;
+    font-size: 16px;
+  }
+
+  .add-input-row {
+    gap: 8px;
+  }
+
+  .add-input-row input {
+    font-size: 16px;
+    padding: 14px 10px;
+  }
+
+  .add-button {
+    width: 34px;
+    height: 34px;
+    font-size: 20px;
+  }
+
+  .todo-text {
+    font-size: 14px;
+  }
+
+  .todo-actions button {
+    font-size: 16px;
+  }
+
+  .auth-container {
+    margin: 60px 14px;
+    padding: 24px 20px;
+  }
+
+  .auth-container h2 {
+    font-size: 22px;
+  }
+}
+
+/* tablet */
+@media (min-width: 481px) and (max-width: 768px) {
+  .app-container {
+    max-width: 560px;
+  }
+
+  .add-input-row input {
+    font-size: 17px;
+  }
+
+  .auth-container {
+    max-width: 420px;
+    margin: 90px auto;
+  }
+}
+
+/* laptop */
+@media (min-width: 769px) and (max-width: 1200px) {
+  .app-container {
+    max-width: 680px;
+  }
+
+  .card {
+    padding: 18px;
+  }
+}
+
+/* desktop */
+@media (min-width: 1201px) {
+  .app-container {
+    max-width: 760px;
+  }
+}
